@@ -1,10 +1,10 @@
 {
-  "name": "react-scripts",
-  "version": "5.0.1",
-  "description": "Configuration and scripts for Create React App.",
+  "name": "@learnifier/react-scripts-lfapp",
+  "version": "1.0.2",
+  "description": "Learnifier Configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/create-react-app.git",
+    "url": "https://github.com/learnifier/create-react-app-lfapp.git",
     "directory": "packages/react-scripts"
   },
   "license": "MIT",

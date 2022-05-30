@@ -95,6 +95,9 @@ const hasJsxRuntime = (() => {
   }
 })();
 
+// ##LEARNIFIER - We want to read from package.json
+const appPackage = require(paths.appPackageJson);
+
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function (webpackEnv) {
@@ -611,6 +614,33 @@ module.exports = function (webpackEnv) {
           {
             inject: true,
             template: paths.appHtml,
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true,
+                },
+              }
+            : undefined
+        )
+      ),
+      // ##LEARNIFIER - Loader html
+      new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            template: paths.appHtml,
+            filename: 'WEB-INF/' + appPackage.name + '_loader.html',
           },
           isEnvProduction
             ? {
