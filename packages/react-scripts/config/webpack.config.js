@@ -639,7 +639,7 @@ module.exports = function (webpackEnv) {
           {},
           {
             inject: true,
-            template: './loader_template.html',
+            template: path.resolve(__dirname, './loader_template.html'),
             filename: 'WEB-INF/' + appPackage.name + '_loader.html',
           },
           isEnvProduction

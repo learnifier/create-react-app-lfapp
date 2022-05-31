@@ -1,6 +1,6 @@
 {
   "name": "@learnifier/react-scripts-lfapp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Learnifier Configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
